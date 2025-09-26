@@ -92,10 +92,10 @@ class CryptoService {
 
 // VERSI BARU (benar dan lebih simpel)
 // Perhatikan perubahan return type-nya
-encrypt.AsymmetricKeyPair<encrypt.RSAPublicKey, encrypt.RSAPrivateKey>
-    generateRsaKeyPair() {
-  return encrypt.RSA.generateKeyPair(_secureRandom());
-}
+// encrypt.AsymmetricKeyPair<encrypt.RSAPublicKey, encrypt.RSAPrivateKey>
+//     generateRsaKeyPair() {
+//   return encrypt.RSA.generateKeyPair(_secureRandom());
+// }
 
   String rsaEncrypt(String text, RSAPublicKey publicKey) {
     final encrypter = encrypt.Encrypter(

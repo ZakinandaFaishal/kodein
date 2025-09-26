@@ -22,24 +22,24 @@ class _RsaScreenState extends State<RsaScreen> {
   String _result = '';
 
   // VERSI BARU
-  encrypt.AsymmetricKeyPair<encrypt.RSAPublicKey, encrypt.RSAPrivateKey>?
-  _keyPair;
+  // encrypt.AsymmetricKeyPair<encrypt.RSAPublicKey, encrypt.RSAPrivateKey>?
+  // _keyPair;
 
-  void _generateKeys() {
-    final keyPair = _cryptoService.generateRsaKeyPair();
-    final parser = encrypt.RSAKeyParser();
+  // void _generateKeys() {
+  //   final keyPair = _cryptoService.generateRsaKeyPair();
+  //   final parser = encrypt.RSAKeyParser();
 
-    // Menggunakan package encrypt untuk memformat ke PEM
-    _publicKeyController.text = parser.encodePublicKeyToPem(keyPair.publicKey);
-    _privateKeyController.text = parser.encodePrivateKeyToPem(
-      keyPair.privateKey,
-    );
+  //   // Menggunakan package encrypt untuk memformat ke PEM
+  //   _publicKeyController.text = parser.encodePublicKeyToPem(keyPair.publicKey);
+  //   _privateKeyController.text = parser.encodePrivateKeyToPem(
+  //     keyPair.privateKey,
+  //   );
 
-    setState(() {
-      _keyPair = keyPair;
-      _result = 'Kunci baru berhasil dibuat!';
-    });
-  }
+  //   setState(() {
+  //     _keyPair = keyPair;
+  //     _result = 'Kunci baru berhasil dibuat!';
+  //   });
+  // }
 
   void _encrypt() {
     if (_publicKeyController.text.isEmpty) {
@@ -82,12 +82,12 @@ class _RsaScreenState extends State<RsaScreen> {
             style: Theme.of(context).textTheme.headlineMedium,
             textAlign: TextAlign.center,
           ),
-          const SizedBox(height: 24),
-          CustomButton(
-            text: 'Generate Kunci Baru',
-            onPressed: _generateKeys,
-            color: Colors.teal,
-          ),
+          // const SizedBox(height: 24),
+          // CustomButton(
+          //   text: 'Generate Kunci Baru',
+          //   onPressed: _generateKeys,
+          //   color: Colors.teal,
+          // ),
           const SizedBox(height: 16),
           CustomTextField(
             controller: _publicKeyController,
